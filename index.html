@@ -2,27 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Invoice Parser</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BRZ Invoice Parser</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+      background: #f6f6f6;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    h1 {
+      color: #2B2E4A;
+    }
+    label, select, input {
+      display: block;
+      width: 100%;
+      margin: 15px 0;
+      padding: 10px;
+    }
+    button {
+      background-color: #EF5455;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #D72638;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Invoice Parser</h1>
-    <form id="upload-form">
-      <select name="vendor" id="vendor">
-        <option value="">-- Select Vendor --</option>
-        <option value="flint_hills">Flint Hills</option>
-        <option value="marathon">Marathon</option>
-        <option value="dale">Dale</option>
-        <option value="bbenergy">BB Energy</option>
-        <option value="boyett">Boyett</option>
-      </select>
-      <input type="file" name="file" id="file" accept=".zip" />
-      <button type="submit">Upload & Parse</button>
-    </form>
-    <div id="message"></div>
-  </div>
-  <script src="script.js"></script>
+  <h1>BRZ Invoice Parser</h1>
+
+  <form action="https://brz-invoice-parser.onrender.com/parse" method="POST" enctype="multipart/form-data">
+    <label for="vendor">Select Vendor:</label>
+    <select name="vendor" id="vendor" required>
+      <option value="">-- Select Vendor --</option>
+      <option value="flint_hills">Flint Hills</option>
+      <option value="marathon">Marathon</option>
+      <option value="dale">Dale</option>
+      <option value="bbenergy">BB Energy</option>
+      <option value="boyett">Boyett</option>
+    </select>
+
+    <label for="file">Upload ZIP File:</label>
+    <input type="file" name="file" id="file" accept=".zip" required />
+
+    <button type="submit">Parse Invoice</button>
+  </form>
 </body>
 </html>
