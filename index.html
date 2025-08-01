@@ -1,9 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Invoice Parser UI</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice Parser</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>✅ BRZ Invoice Parser UI is Live!</h1>
+  <div class="container">
+    <h1>Invoice Parser</h1>
+    <form id="upload-form">
+      <select name="vendor" id="vendor">
+        <option value="">-- Select Vendor --</option>
+        <option value="flint_hills">Flint Hills</option>
+        <option value="marathon">Marathon</option>
+        <option value="dale">Dale</option>
+        <option value="bbenergy">BB Energy</option>
+        <option value="boyett">Boyett</option>
+      </select>
+      <input type="file" name="file" id="file" accept=".zip" />
+      <button type="submit">Upload & Parse</button>
+    </form>
+    <div id="message"></div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>

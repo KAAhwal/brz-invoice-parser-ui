@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.container {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1 {
+  margin-bottom: 15px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+input, select, button {
+  margin: 8px 0;
+  padding: 10px;
+  font-size: 16px;
+}
+button {
+  background: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+button:hover {
+  background: #0056b3;
+}
+#message {
+  margin-top: 10px;
+}
